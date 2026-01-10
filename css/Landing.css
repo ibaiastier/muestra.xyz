@@ -1,0 +1,172 @@
+@font-face {
+    font-family: Diatype;
+    src: url(./fonts/ABCDiatypeVariable-Trial.woff2) format("woff2-variations");
+}
+
+p {
+    font-family: Diatype, sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* LANDING PAGE */
+
+#menu-desktop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: #2d8ceb;
+    padding: 1.8rem;
+    align-items: left;
+    justify-content: left;
+    z-index: 1030;
+}
+
+#menu-mobile {
+    display: none;
+    padding: 1.2rem;
+    background-color: #2d8ceb;
+}
+
+#logo {
+    width: 100%;
+    height: auto;
+}
+
+.contact {
+    position: absolute;
+    bottom: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.contact p {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+}
+
+#visual{
+    position: absolute;
+    margin-left: 50%;
+    width: 50%;
+    padding: 1.8rem;
+}
+
+#but-index {
+    position: absolute;
+    right: 2rem;
+}
+
+#vertical-line {
+    position: absolute;
+    margin-left: 2%;
+    margin-top: 0.8rem;
+    width: 3px;
+    height: 2000px;
+    background: #000;
+}
+
+.horizontal-line {
+    position: relative;
+    margin-top: 0.8rem;
+    width: 100%;
+    height: 3px;
+    background: #000;
+}
+
+.cont-horizontal-line {
+    padding-right: 3.6%;
+}
+
+.btn {
+    font-family: Diatype, sans-serif;
+    font-weight: 380;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    padding: 0.1rem 0.4rem;
+    margin-top: -1rem;
+    color: #000;
+    background-color: #bbbbbb;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #a3a3a3;
+    color: #000000;
+}
+
+.credits-popup{
+    min-width: fit-content;
+    max-width: 40%;
+    font-family: Diatype, sans-serif;
+
+}
+
+.credits-popup p {
+    font-size: 1.1rem;
+    font-weight: 380;
+    padding-left: 3rem;
+    margin-bottom: 0;
+}
+
+#comentario {
+    display: flex;
+    align-items: flex-end;
+}
+
+#comentario p {
+    text-align: right;
+    font-size: 0.8rem;
+}
+
+#visual img {
+    width: 100%;
+}
+
+.ponente-tooltip {
+    position: fixed;
+    background: #000;
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-family: Diatype, sans-serif;
+    font-size: 1rem;
+    z-index: 1200;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+    #menu-desktop { display: none; }
+    #menu-mobile { display: block; position: relative; width: 100%; }
+    .contact {
+        position: relative;
+        bottom: 0;
+        flex-direction: row;
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+    .container {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #visual {
+        position: relative;
+        margin-left: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+    #vertical-line {width: 2px;}
+    .horizontal-line {height: 2px;}
+}
