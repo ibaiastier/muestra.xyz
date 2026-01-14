@@ -126,28 +126,49 @@ function showCartel(year, event) {
     }, 10);
 }
 
-const ponentesMap = {
-    'Portada_2025_01.jpg': 'Álvaro Navarrete',
-    'Portada_2025_02.jpg': 'Marta López',
-    'Portada_2025_03.jpg': 'Pau Bosque',
-    'Portada_2025_04.jpg': 'Lucía Acedo',
-    'Portada_2025_05.jpg': 'Carlos Cuaresma',
-    'Portada_2025_06.jpg': 'Mar García',
-    'Portada_2025_07.jpg': 'Miguel González',
-    'Portada_2025_08.jpg': 'Andrea Torralba',
-    'Portada_2025_09.jpg': 'Mateo Magaz, Guillermo Fernández',
-    'Portada_2025_10.jpg': 'Curro Claret',
+// Generar mapa de ponentes desde CSV
+function parseCSV(text) {
+    const lines = text.trim().split('\n');
+    const headers = lines[0].split(',').map(h => h.trim());
+    const data = [];
+    
+    for (let i = 1; i < lines.length; i++) {
+        if (!lines[i].trim()) continue;
+        
+        const values = [];
+        let currentValue = '';
+        let insideQuotes = false;
+        
+        for (let j = 0; j < lines[i].length; j++) {
+            const char = lines[i][j];
+            
+            if (char === '"') {
+                insideQuotes = !insideQuotes;
+            } else if (char === ',' && !insideQuotes) {
+                values.push(currentValue.trim());
+                currentValue = '';
+            } else {
+                currentValue += char;
+            }
+        }
+        values.push(currentValue.trim());
+        
+        const row = {};
+        headers.forEach((header, index) => {
+            row[header] = values[index] || '';
+        });
+        data.push(row);
+    }
+    
+    return data;
+}
 
-    'Portada_2024_01.jpg': 'Teresa Carpio',
-    'Portada_2024_02.jpg': 'Amelia González',
-    'Portada_2024_03.jpg': 'María León',
-    'Portada_2024_04.jpg': 'Lola Marín',
-    'Portada_2024_05.jpg': 'Ibai Astier',
-    'Portada_2024_06.jpg': 'Blanca Crespí',
-    'Portada_2024_07.jpg': 'Víctor Vegabascones',
-    'Portada_2024_08.jpg': 'Mathías Meneses',
-    'Portada_2024_09.jpg': 'Sofía Ruíz'
-};
+const ponentesMap = {};
+const proyectos = parseCSV(PROYECTOS_CSV);
+proyectos.forEach(proyecto => {
+    const imageName = proyecto.imagen.split('/').pop();
+    ponentesMap[imageName] = proyecto.nombre;
+});
 
 let tooltipEl = null;
 function showPonenteTooltip(e) {
