@@ -177,10 +177,12 @@ p {
     }
 
     #atras-menu p {
-        position: fixed;
-        margin: 0.5rem;
-        padding-top: 1.5rem;
         text-align: right;
+        margin: 1rem 0;
+        position: fixed;
+        top: 0;
+        right: 1.5rem;
+        z-index: 3000;
     }
 
     #titulo {
