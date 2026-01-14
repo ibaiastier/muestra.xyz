@@ -86,7 +86,7 @@ function showCartel(year, event) {
     const button = event.target.closest('button');
     const imgMini = button.querySelector('img');
     const rect = imgMini.getBoundingClientRect();
-    const src = `./img/Cartel_${year}.png`;
+    const src = `./img/Muestra_${year}_Cartel.png`;
     const modal = document.createElement('div');
     modal.style.position = 'fixed';
     modal.style.top = '0';
