@@ -3,14 +3,14 @@
     src: url(../fonts/ABCDiatypeVariable-Trial.woff2) format("woff2-variations");
 }
 
-#atras  {
+#atras-menu  {
     text-align: right;
     margin: 1rem 1.5rem;
-    position: relative;
+    position: fixed;
     z-index: 3000;
 }
 
-#atras a {
+#atras-menu a {
     color: #000000;
     text-decoration: none;
 }
