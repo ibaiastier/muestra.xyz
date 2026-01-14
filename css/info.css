@@ -167,7 +167,7 @@ p {
         position: fixed;
         width: 100%;
         height: auto;
-        padding: 0.5rem 2rem;
+        padding: 3.5rem 2rem;
         top: 0;
         left: 0;
         z-index: 2000;
@@ -182,7 +182,7 @@ p {
         position: fixed;
         top: 0;
         right: 1.5rem;
-        padding-bottom: 5rem;
+        padding-bottom: 3rem;
         z-index: 3000;
     }
 
