@@ -1,0 +1,322 @@
+@font-face {
+    font-family: Diatype;
+    src: url(../fonts/ABCDiatypeVariable-Trial.woff2) format("woff2-variations");
+}
+
+p {
+    font-family: Diatype, sans-serif;
+    font-weight: 400;
+    font-size: clamp(1.2rem, 1rem + 0.5vw, 1.5rem);
+    line-height: 1.2;
+    color: #000000;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ELEMENTOS ENCABEZADO */
+#titulo  {
+    text-align: left;
+    margin: 1rem 1rem;
+}
+
+#titulo p {
+    font-size: 1.5rem;
+}
+
+.encabezado-index {
+    display: flex;
+    align-items: flex-start;
+    list-style: none;
+    padding: 0;
+    margin: 5rem 1rem 0 1rem;
+    border-bottom: 2px solid #000;
+    gap: 0;
+}
+
+/* COLUMNAS DEL ENCABEZADO */
+/* Columna 1: Nombre ponente (25% del ancho) */
+.encabezado-index li:nth-child(1),
+.col-ponente {
+    flex: 0 0 25% !important;
+    text-align: left;
+}
+
+/* Columna 2: Nombre proyecto (50% del ancho) */
+.encabezado-index li:nth-child(2),
+.col-proyecto {
+    flex: 0 0 50% !important;
+    text-align: left;
+}
+
+/* Columna 3: Año (5% del ancho) */
+.encabezado-index li:nth-child(3),
+.col-año {
+    flex: 0 0 5% !important;
+    text-align: left;
+}
+
+/* Columna 4: Categoría (20% del ancho, alineada a la derecha) */
+.encabezado-index li:nth-child(4),
+.col-categoria {
+    flex: 0 0 20% !important;
+    text-align: right;
+}
+
+/* ACORDEONES */
+/* Estilo accordion */
+.accordion-button {
+    padding: 0 !important;
+    border: none !important;
+    height: 1.5rem !important;
+    display: flex !important;
+    gap: 0 !important;
+    width: 100% !important;
+    align-items: center !important;
+    background: transparent !important;
+}
+
+/* Eliminar flechita expansión del accordion */
+.accordion-button::after {
+    display: none !important;
+}
+
+/* Contenedor de items del accordion */
+.accordion-item {
+    border: none;
+    margin: 0.75rem 1rem 0 1rem;
+    border-bottom: 2px solid #000 !important;
+}
+
+/* Texto dentro del botón del accordion */
+.accordion-button p {
+    margin: 0 !important;
+    padding-bottom: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 0;
+}
+
+/* Columna año no colapsar */
+.accordion-button .col-año {
+    overflow: visible !important;
+    text-overflow: clip !important;
+}
+
+/* Estilos al hacer focus o click */
+.accordion-button:focus,
+.accordion-button:active {
+    border-color: #000 !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background-color: transparent !important;
+}
+
+/* Cuando el accordion está expandido */
+.accordion-button:not(.collapsed) {
+    background: transparent !important;
+}
+
+/* Años clickeables para filtrado */
+.año-filtrable {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.año-filtrable:hover {
+    color: #DD380A;
+}
+
+/* Categorías clickeables para filtrado */
+.categoria-filtrable {
+    color: #000000;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    display: inline-block;
+}
+
+.categoria-filtrable:hover {
+    color: #DD380A;
+}
+
+/* Items del acordeón deshabilitados (años no seleccionados) */
+.acordeon-deshabilitado {
+    opacity: 0.4;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.acordeon-deshabilitado .accordion-item {
+    border-bottom-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.acordeon-deshabilitado:hover {
+    opacity: 0.6;
+}
+
+/* CONTENIDO DESPLEGABLES */
+/* Accordion body */
+.accordion-body-con-imagen {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 1rem 0 !important;
+}
+
+.contenido-descripcion {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.texto-descripcion {
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Link + info */
+.link-mas-info {
+    color: #000000;
+    text-decoration: none;
+    padding: 1rem;
+}
+
+.link-mas-info:hover {
+    text-decoration: underline;
+}
+
+/* Contenedor de imagen */
+.contenido-imagen {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+/* Imagen */
+.imagen-proyecto {
+    width: 300px;
+    height: 210px;
+    object-fit: cover;
+    background-color: #cccccc;
+}
+
+@media (max-width: 767px) {
+    .encabezado-index p {
+        line-height: 1.2rem;
+    }
+    .accordion-item p {
+        line-height: 1.2rem;
+    }
+
+    /* Reducir margen superior de accordion items */
+    .accordion-item {
+        margin-top: 0.5rem;
+        border-bottom: 1.8px solid #000 !important;
+    }
+
+    /* Encabezado en versión móvil: grid 2x2 */
+    .encabezado-index {
+        display: grid;
+        border-bottom: 1.8px solid #000 !important;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 0.2rem 1rem;
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.2rem;
+    }
+
+    /* Reorganizar las columnas del encabezado */
+    .encabezado-index li:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+        flex: none !important;
+    }
+
+    .encabezado-index li:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+        flex: none !important;
+    }
+
+    .encabezado-index li:nth-child(3) {
+        grid-column: 2;
+        grid-row: 1;
+        flex: none !important;
+        text-align: right;
+    }
+
+    .encabezado-index li:nth-child(4) {
+        grid-column: 2;
+        grid-row: 2;
+        flex: none !important;
+        text-align: right;
+    }
+
+    /* Acordeón botón en versión móvil: grid 2x2 */
+    .accordion-button {
+        display: grid !important;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 0.2rem 1rem;
+        height: auto !important;
+    }
+
+    /* Reducir padding inferior de los párrafos del botón */
+    .accordion-button p {
+        padding-bottom: 0.2rem;
+    }
+
+    /* Reorganizar las columnas del acordeón */
+    .col-ponente {
+        grid-column: 1;
+        grid-row: 1;
+        flex: none !important;
+    }
+
+    .col-proyecto {
+        grid-column: 1;
+        grid-row: 2;
+        flex: none !important;
+    }
+
+    .col-año {
+        grid-column: 2;
+        grid-row: 1;
+        flex: none !important;
+        text-align: right;
+    }
+
+    .col-categoria {
+        grid-column: 2;
+        grid-row: 2;
+        flex: none !important;
+        text-align: right;
+    }
+
+    /* Ajustar el contenido del acordeón desplegado */
+    .accordion-body-con-imagen {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .contenido-descripcion {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .contenido-imagen {
+        justify-content: center;
+    }
+
+    .imagen-proyecto {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+}
