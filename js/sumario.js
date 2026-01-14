@@ -34,7 +34,7 @@ const participantesPorAño = {
             nombre: "Ibai Astier", 
             proyecto: "Catálogo de Flores y Plantas", 
             categoria: "Gráfico",
-            descripcion: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.",
+            descripcion: "El Catálogo de Flores y el Catálogo de Plantas fueron dos proyectos encargados por la floristería PANAME, con el objetivo de reforzar la comunidad en torno a la floristería. Se elaboraron dos catálogos funcionales que, en lugar de imágenes, contenían dibujos realizados por cada uno de los 50 participantes. ",
             imagen: "https://via.placeholder.com/400x300/cccccc/666666?text=Ibai+Astier"
         },
         { nombre: "Blanca Crespí", proyecto: "Del render a lo físico", categoria: "Experimental", descripcion: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla con.", imagen: "https://via.placeholder.com/300x300/cccccc/666666?text=Blanca+Crespi" },
