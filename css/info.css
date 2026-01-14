@@ -1,0 +1,224 @@
+@font-face {
+    font-family: Diatype;
+    src: url(./fonts/ABCDiatypeVariable-Trial.woff2) format("woff2-variations");
+}
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100vh;
+    white-space: nowrap;
+    padding: 1.8rem;
+    background-color: #2d8ceb;
+    align-items: left;
+    justify-content: left;
+    z-index: 2000;
+}
+
+#titulo  {
+    font-weight: 400;
+    font-size: 7rem;
+    text-align: left;
+    margin: 1rem 3rem 0.5rem;
+}
+
+p {
+    font-family: Diatype, sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: #000000;
+}
+
+.menu-info {
+    display: absolute;
+    gap: 1.5rem;
+    margin: 1rem 1.5rem;
+    list-style: none;
+}
+
+.menu-info li {
+    cursor: pointer;
+}
+
+.menu-info li:hover p {
+    text-decoration: underline;
+}
+
+.menu-info p {
+    margin-bottom: 0.5rem;
+}
+
+.menu-info li.active p {
+    text-decoration: underline;
+}
+
+.lista-criterios {
+    font-family: Diatype, sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: #000000;
+    margin: 1rem 0 1rem 10rem;
+}
+
+.lista-criterios li p {
+    margin: 0;
+}
+
+.lista-zonas {
+    list-style: none;
+    margin: 0rem 8.65rem;
+}
+
+.lista-zonas li {
+    margin-bottom: 1rem;
+}
+
+.lista-zonas li p {
+    margin: 0;
+    cursor: pointer;
+}
+
+.lista-zonas div {
+    position: relative;
+}
+
+.lista-zonas img {
+    display: none;
+    position: fixed;
+    max-width: 300px;
+    z-index: 1000;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lista-zonas div:hover img {
+    display: block;
+}
+
+.textos-visual > div {
+    position: relative;
+}
+
+.textos-visual > div > img {
+    display: none;
+    position: fixed;
+    max-width: 200px;
+    z-index: 1000;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.textos-visual > div:hover > img {
+    display: block;
+}
+
+.textos-visual a {
+    color: black;
+    text-decoration: none;
+}
+
+#visual-info {
+    background-color: #2d8ceb;
+    margin-left: 25%;
+    width: 75%;
+    padding: 1.8rem;
+    padding-left: 8rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: left;
+    justify-content: left;
+    z-index: 1030;
+}
+
+#visual-info > .container {
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+}
+
+#visual-escala {
+    padding-bottom: 30rem;
+}
+
+/* Móvil */
+@media (max-width: 1024px) {
+    #menu {
+        position: fixed;
+        width: 100%;
+        height: auto;
+        padding: 0.5rem 2rem;
+        top: 0;
+        left: 0;
+        z-index: 2000;
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    #titulo {
+        font-size: 7rem;
+        margin: 0.5rem;
+        flex-shrink: 0;
+    }
+
+    .menu-info {
+        margin: 0.5rem;
+        padding-top: 1.5rem;
+        flex-grow: 1;
+        white-space: normal;
+        overflow: visible;
+    }
+
+    .menu-info p {
+        font-size: 1.5rem;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    #visual-info {
+        position: static;
+        margin-left: 0;
+        padding-top: 250px;
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .lista-criterios {
+        margin: 1rem 2rem;
+        font-size: 1.5rem;
+    }
+
+    .lista-zonas {
+        margin: 0rem 2rem;
+    }
+
+    .lista-zonas li {
+        margin-bottom: 1rem;
+    }
+
+    .lista-zonas img,
+    .textos-visual > div > img {
+        max-width: 200px;
+        right: 0.5rem;
+    }
+
+    #visual-info > .container {
+        margin-bottom: 5rem;
+        margin-top: 5rem;
+    }
+
+    #visual-seleccion {
+        margin-top: 1rem !important;
+    }
+
+    #visual-escala {
+        padding-bottom: 10rem;
+    }
+}
