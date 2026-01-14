@@ -2,6 +2,12 @@
     font-family: Diatype;
     src: url(../fonts/ABCDiatypeVariable-Trial.woff2) format("woff2-variations");
 }
+
+#atras  {
+    text-align: right;
+    margin: 1rem 1rem;
+}
+
 #menu {
     position: fixed;
     top: 0;
