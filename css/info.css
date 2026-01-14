@@ -183,6 +183,7 @@ p {
         top: 0;
         right: 1.5rem;
         z-index: 3000;
+        background-color: aquamarine;
     }
 
     #titulo {
