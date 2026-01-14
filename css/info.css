@@ -176,7 +176,7 @@ p {
         gap: 2rem;
     }
 
-    #atras-menu {
+    #atras-menu p {
         position: fixed;
         margin: 0.5rem;
         padding-top: 1.5rem;
