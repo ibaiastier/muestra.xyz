@@ -160,6 +160,16 @@ p {
 
 /* Móvil */
 @media (max-width: 1024px) {
+    #atras {
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin: 1rem 1.5rem;
+        z-index: 3000;
+        background-color: #2d8ceb;
+        padding: 0.5rem;
+    }
+
     #menu {
         position: fixed;
         width: 100%;
