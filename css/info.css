@@ -160,7 +160,7 @@ p {
 
 /* Móvil */
 @media (max-width: 1024px) {
-    #atras {
+    #atras-menu {
         position: fixed;
         top: 0;
         right: 0;
