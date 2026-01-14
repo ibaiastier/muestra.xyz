@@ -1,6 +1,6 @@
 @font-face {
     font-family: Diatype;
-    src: url(./fonts/ABCDiatypeVariable-Trial.woff2) format("woff2-variations");
+    src: url(../fonts/ABCDiatypeVariable-Trial.woff2) format("woff2-variations");
 }
 
 * { 
