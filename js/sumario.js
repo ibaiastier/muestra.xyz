@@ -6,29 +6,33 @@ let categoriaFiltroActiva = null;
 // Función para parsear CSV
 function parseCSV(text) {
     const lines = text.trim().split('\n');
-    const headers = lines[0].split(',');
+    const headers = lines[0].split(',').map(h => h.trim());
     const data = [];
     
     for (let i = 1; i < lines.length; i++) {
+        if (!lines[i].trim()) continue; // Saltar líneas vacías
+        
         const values = [];
         let currentValue = '';
         let insideQuotes = false;
         
-        for (let char of lines[i]) {
+        for (let j = 0; j < lines[i].length; j++) {
+            const char = lines[i][j];
+            
             if (char === '"') {
                 insideQuotes = !insideQuotes;
             } else if (char === ',' && !insideQuotes) {
-                values.push(currentValue);
+                values.push(currentValue.trim());
                 currentValue = '';
             } else {
                 currentValue += char;
             }
         }
-        values.push(currentValue);
+        values.push(currentValue.trim());
         
         const row = {};
         headers.forEach((header, index) => {
-            row[header.trim()] = values[index]?.trim() || '';
+            row[header] = values[index] || '';
         });
         data.push(row);
     }
@@ -39,9 +43,13 @@ function parseCSV(text) {
 // Cargar y organizar datos por año
 async function cargarDatos() {
     try {
+        console.log('Iniciando carga de datos...');
         const response = await fetch('../data/proyectos.csv');
+        console.log('Response:', response.status);
         const csvText = await response.text();
+        console.log('CSV cargado, primeras líneas:', csvText.substring(0, 200));
         const proyectos = parseCSV(csvText);
+        console.log('Proyectos parseados:', proyectos.length);
         
         // Organizar por año
         participantesPorAño = {};
@@ -58,6 +66,8 @@ async function cargarDatos() {
                 imagen: proyecto.imagen
             });
         });
+        
+        console.log('Datos organizados por año:', participantesPorAño);
         
         // Renderizar después de cargar
         renderizarAccordion();
