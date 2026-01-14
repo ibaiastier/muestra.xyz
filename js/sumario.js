@@ -1,4 +1,4 @@
-// Cargar datos desde CSV
+// Cargar datos desde CSV embebido
 let participantesPorAño = {};
 let añoFiltroActivo = null;
 let categoriaFiltroActiva = null;
@@ -10,7 +10,7 @@ function parseCSV(text) {
     const data = [];
     
     for (let i = 1; i < lines.length; i++) {
-        if (!lines[i].trim()) continue; // Saltar líneas vacías
+        if (!lines[i].trim()) continue;
         
         const values = [];
         let currentValue = '';
@@ -40,40 +40,28 @@ function parseCSV(text) {
     return data;
 }
 
-// Cargar y organizar datos por año
-async function cargarDatos() {
-    try {
-        console.log('Iniciando carga de datos...');
-        const response = await fetch('../data/proyectos.csv');
-        console.log('Response:', response.status);
-        const csvText = await response.text();
-        console.log('CSV cargado, primeras líneas:', csvText.substring(0, 200));
-        const proyectos = parseCSV(csvText);
-        console.log('Proyectos parseados:', proyectos.length);
-        
-        // Organizar por año
-        participantesPorAño = {};
-        proyectos.forEach(proyecto => {
-            const año = proyecto.año;
-            if (!participantesPorAño[año]) {
-                participantesPorAño[año] = [];
-            }
-            participantesPorAño[año].push({
-                nombre: proyecto.nombre,
-                proyecto: proyecto.proyecto,
-                categoria: proyecto.categoria,
-                descripcion: proyecto.descripcion,
-                imagen: proyecto.imagen
-            });
+// Cargar y organizar datos
+function cargarDatos() {
+    const proyectos = parseCSV(PROYECTOS_CSV);
+    
+    // Organizar por año
+    participantesPorAño = {};
+    proyectos.forEach(proyecto => {
+        const año = proyecto.año;
+        if (!participantesPorAño[año]) {
+            participantesPorAño[año] = [];
+        }
+        participantesPorAño[año].push({
+            nombre: proyecto.nombre,
+            proyecto: proyecto.proyecto,
+            categoria: proyecto.categoria,
+            descripcion: proyecto.descripcion,
+            imagen: proyecto.imagen
         });
-        
-        console.log('Datos organizados por año:', participantesPorAño);
-        
-        // Renderizar después de cargar
-        renderizarAccordion();
-    } catch (error) {
-        console.error('Error cargando datos:', error);
-    }
+    });
+    
+    // Renderizar después de cargar
+    renderizarAccordion();
 }
 
 // Filtrar por año
