@@ -1,51 +1,70 @@
-// ESTRUCTURA DE PARTICIPANTES POR AÑO
-const participantesPorAño = {
-    // Aquí irán 2026, 2027, etc.
-    2025: [
-        { nombre: "Álvaro Navarrete", proyecto: "El inicio del producto", categoria: "Investigación", descripcion: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla con.", imagen: "../img/2025_01_0_portada.jpg" },
-        { nombre: "Marta López", proyecto: "Legormiti", categoria: "Experimental", descripcion: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla con.", imagen: "../img/2025_02_0_portada.jpg" },
-        { nombre: "Pau Bosque", proyecto: "Housse", categoria: "Gráfico", descripcion: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla con.", imagen: "../img/2025_03_0_portada.jpg" },
-        { nombre: "Lucía Acedo", proyecto: "Por qué hay que reírse de uno mismo de vez en cuando", categoria: "Experimental", descripcion: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla con.", imagen: "../img/2025_04_0_portada.jpg" },
-        { nombre: "Carlos Cuaresma", proyecto: "Chopvolt", categoria: "Producto", descripcion: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla con.", imagen: "../img/2025_05_0_portada.jpg" },
-        { nombre: "Mar García", proyecto: "Coxal", categoria: "Producto", descripcion: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla con.", imagen: "../img/2025_06_0_portada.jpg" },
-        { nombre: "Miguel González", proyecto: "Ava", categoria: "Producto", descripcion: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla con.", imagen: "../img/2025_07_0_portada.jpg" },
-        { 
-            nombre: "Andrea Torralba", 
-            proyecto: "Contenedor Primavera Sound", 
-            categoria: "Investigación",
-            descripcion: "Proyecto de investigación aplicando la metodología de Diseño Centrado en el Usuario (DCU) para el desarrollo de un contenedor de basura para el Primavera Sound Festival",
-            imagen: "../img/2025_08_0_portada.jpg"
-        },
-        { nombre: "Guillermo Fernández, Mateo Magaz", proyecto: "White cane (skane)", categoria: "Producto", descripcion: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla con.", imagen: "../img/2025_09_0_portada.jpg" },
-        { nombre: "Curro Claret", proyecto: "London Bridge, Taller niños superhéroes, Arrels - Estudiantes de Elisava", categoria: "Producto", descripcion: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla con.", imagen: "../img/2025_10_0_portada.jpg" }
-    ],
-    2024: [
-        { nombre: "Teresa Carpio", proyecto: "BLASTIC", categoria: "Producto", descripcion: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla con.", imagen: "../img/2024_01_0_portada.jpg" },
-        { 
-            nombre: "Amelia González", 
-            proyecto: "Lámpara 2111", 
-            categoria: "Producto",
-            descripcion: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.",
-            imagen: "../img/2024_02_0_portada.jpg"
-        },
-        { nombre: "María León", proyecto: "Cuento inclusivo", categoria: "Gráfico", descripcion: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla con.", imagen: "../img/2024_03_0_portada.jpg" },
-        { nombre: "Lola Marín", proyecto: "SampleMusic", categoria: "Experimental", descripcion: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla con.", imagen: "../img/2024_04_0_portada.jpg" },
-        { 
-            nombre: "Ibai Astier", 
-            proyecto: "Catálogo de Flores y Plantas", 
-            categoria: "Gráfico",
-            descripcion: "El Catálogo de Flores y el Catálogo de Plantas fueron dos proyectos encargados por la floristería PANAME, con el objetivo de reforzar la comunidad en torno a la floristería. Se elaboraron dos catálogos funcionales que, en lugar de imágenes, contenían dibujos realizados por cada uno de los 50 participantes. ",
-            imagen: "../img/2024_05_0_portada.jpg"
-        },
-        { nombre: "Blanca Crespí", proyecto: "Del render a lo físico", categoria: "Experimental", descripcion: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla con.", imagen: "../img/2024_06_0_portada.jpg" },
-        { nombre: "Víctor Vegabascones", proyecto: "aPeso", categoria: "Investigación", descripcion: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla con.", imagen: "../img/2024_07_0_portada.jpg" },
-        { nombre: "Mathías Meneses", proyecto: "NAIA", categoria: "Producto", descripcion: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla con.", imagen: "../img/2024_08_0_portada.jpg" },
-        { nombre: "Sofía Ruíz", proyecto: "Taburete UOVO", categoria: "Producto", descripcion: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla con.", imagen: "../img/2024_09_0_portada.jpg" }
-    ]
-};
-
+// Cargar datos desde CSV
+let participantesPorAño = {};
 let añoFiltroActivo = null;
 let categoriaFiltroActiva = null;
+
+// Función para parsear CSV
+function parseCSV(text) {
+    const lines = text.trim().split('\n');
+    const headers = lines[0].split(',');
+    const data = [];
+    
+    for (let i = 1; i < lines.length; i++) {
+        const values = [];
+        let currentValue = '';
+        let insideQuotes = false;
+        
+        for (let char of lines[i]) {
+            if (char === '"') {
+                insideQuotes = !insideQuotes;
+            } else if (char === ',' && !insideQuotes) {
+                values.push(currentValue);
+                currentValue = '';
+            } else {
+                currentValue += char;
+            }
+        }
+        values.push(currentValue);
+        
+        const row = {};
+        headers.forEach((header, index) => {
+            row[header.trim()] = values[index]?.trim() || '';
+        });
+        data.push(row);
+    }
+    
+    return data;
+}
+
+// Cargar y organizar datos por año
+async function cargarDatos() {
+    try {
+        const response = await fetch('../data/proyectos.csv');
+        const csvText = await response.text();
+        const proyectos = parseCSV(csvText);
+        
+        // Organizar por año
+        participantesPorAño = {};
+        proyectos.forEach(proyecto => {
+            const año = proyecto.año;
+            if (!participantesPorAño[año]) {
+                participantesPorAño[año] = [];
+            }
+            participantesPorAño[año].push({
+                nombre: proyecto.nombre,
+                proyecto: proyecto.proyecto,
+                categoria: proyecto.categoria,
+                descripcion: proyecto.descripcion,
+                imagen: proyecto.imagen
+            });
+        });
+        
+        // Renderizar después de cargar
+        renderizarAccordion();
+    } catch (error) {
+        console.error('Error cargando datos:', error);
+    }
+}
 
 // Filtrar por año
 function filtrarPorAño(año) {
@@ -167,5 +186,5 @@ function renderizarAccordion() {
     });
 }
 
-// Renderizar inicial
-renderizarAccordion();
+// Cargar datos al inicio
+cargarDatos();
