@@ -5,8 +5,10 @@
 
 #atras-menu  {
     text-align: right;
-    margin: 1rem 1.5rem;
+    margin: 1rem 0;
     position: fixed;
+    top: 0;
+    right: 1.5rem;
     z-index: 3000;
 }
 
@@ -161,12 +163,10 @@ p {
 /* Móvil */
 @media (max-width: 1024px) {
     #atras-menu {
-        position: fixed;
-        top: 0;
-        right: 0;
-        margin: 1rem 1.5rem 3rem 1.5rem;
-        z-index: 3000;
-        padding: 0.5rem;
+        position: static;
+        margin: 0.5rem;
+        padding: 0;
+        background-color: transparent;
     }
 
     #menu {
