@@ -163,10 +163,10 @@ p {
 /* Móvil */
 @media (max-width: 1024px) {
     #atras-menu {
+        background-color: #2d8ceb;
         position: static;
         margin: 0.5rem;
-        padding: 0;
-        background-color: transparent;
+        text-align: left;
     }
 
     #menu {
