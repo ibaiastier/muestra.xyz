@@ -177,7 +177,7 @@ p {
     }
 
     #atras-menu {
-        position: static;
+        position: fixed;
         margin: 0.5rem;
         padding-top: 1.5rem;
         text-align: right;
