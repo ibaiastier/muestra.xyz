@@ -162,12 +162,6 @@ p {
 
 /* Móvil */
 @media (max-width: 1024px) {
-    #atras-menu {
-        position: static;
-        margin: 0.5rem;
-        padding-top: 1.5rem;
-        text-align: left;
-    }
 
     #menu {
         position: fixed;
@@ -180,6 +174,13 @@ p {
         display: flex;
         align-items: flex-start;
         gap: 2rem;
+    }
+
+    #atras-menu {
+        position: static;
+        margin: 0.5rem;
+        padding-top: 1.5rem;
+        text-align: right;
     }
 
     #titulo {
