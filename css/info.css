@@ -178,10 +178,11 @@ p {
 
     #atras-menu p {
         text-align: right;
-        margin: 1rem 0 1rem;
+        margin: 1rem 0;
         position: fixed;
         top: 0;
         right: 1.5rem;
+        padding: 0 0 2rem;
         z-index: 3000;
     }
 
