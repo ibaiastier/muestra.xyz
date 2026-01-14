@@ -139,6 +139,13 @@ function renderizarAccordion() {
         button.setAttribute('aria-controls', collapseId);
         collapseDiv.setAttribute('id', collapseId);
         
+        // Detectar cuando se cierra el acordeón para restaurar el gris
+        collapseDiv.addEventListener('hidden.bs.collapse', () => {
+            if (estaDeshabilitado && !itemDiv.classList.contains('acordeon-deshabilitado')) {
+                itemDiv.classList.add('acordeon-deshabilitado');
+            }
+        });
+        
         accordion.appendChild(accordionItem);
     });
 
