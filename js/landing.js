@@ -16,6 +16,8 @@ const creditsData = {
         <p>Andrea&nbsp;Torralba</p>
         <p>Ibai&nbsp;Astier</p>
         <p>Lola&nbsp;Marín</p>
+        <p style="padding-left: 0; margin-top: 1rem">Presentadora</p>
+        <p>Soledad Manzano</p>        
         <p style="padding-left: 0; margin-top: 1rem">Fotografías</p>
         <p>Joan</p>
         <p style="padding-left: 0; margin-top: 1rem">Asistencia</p>
@@ -26,6 +28,8 @@ const creditsData = {
         <p>Soledad&nbsp;Manzano</p>
         <p>Andrea&nbsp;Torralba</p>
         <p>Ibai&nbsp;Astier</p>
+        <p style="padding-left: 0; margin-top: 1rem">Presentadora</p>
+        <p>Soledad Manzano</p>
         <p style="padding-left: 0; margin-top: 1rem">Asistencia</p>
         <p>75 personas</p>
     `
